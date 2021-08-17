@@ -62,5 +62,11 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSCameraUsageDescription</key>
+	<string>카메라를 사용합니다.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>사진을 사용합니다.</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>마이크를 사용합니다.</string>
 </dict>
 </plist>

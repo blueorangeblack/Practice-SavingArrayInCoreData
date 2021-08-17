@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Rh0-cG-noB">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Practice-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SavingArrayInCoreData" customModuleProvider="target" sceneMemberID="viewController">
@@ -69,6 +69,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Practice" id="x5Y-Zj-w38"/>
                     <connections>
                         <outlet property="aromasLabel" destination="R9e-fY-AO6" id="XbM-R2-AWa"/>
                         <outlet property="imageView0" destination="iET-5E-ffF" id="dqu-6X-Za2"/>
@@ -80,11 +81,64 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2.8985507246376816" y="37.5"/>
+            <point key="canvasLocation" x="913.04347826086962" y="37.5"/>
+        </scene>
+        <!--Image1-->
+        <scene sceneID="JV7-ap-UpJ">
+            <objects>
+                <viewController id="vbN-qM-BJv" customClass="ImagesViewController" customModule="SavingArrayInCoreData" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TOX-Xj-yPF">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="JC3-Ri-PDT"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Image1" image="photo.fill.on.rectangle.fill" catalog="system" id="grt-4w-U9c"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ow9-DP-wdc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="913" y="720"/>
+        </scene>
+        <!--Images2-->
+        <scene sceneID="WFp-qK-Xzh">
+            <objects>
+                <viewController id="uHB-MC-j7k" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qyB-kd-IGQ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="9KK-zX-elP"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Images2" image="photo.fill.on.rectangle.fill" catalog="system" id="3r6-mu-MXS"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="peZ-fg-mNS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="912" y="1408"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="eos-3X-ldW">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Rh0-cG-noB" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="tcx-S8-JyZ">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="aF6-oS-Mtz"/>
+                        <segue destination="vbN-qM-BJv" kind="relationship" relationship="viewControllers" id="ALO-2a-SeL"/>
+                        <segue destination="uHB-MC-j7k" kind="relationship" relationship="viewControllers" id="FIa-BV-UUT"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Bf-KC-uNj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-286" y="863"/>
         </scene>
     </scenes>
     <resources>
         <image name="camera" catalog="system" width="128" height="94"/>
+        <image name="photo.fill.on.rectangle.fill" catalog="system" width="128" height="96"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
