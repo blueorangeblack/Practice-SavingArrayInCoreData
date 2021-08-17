@@ -18,13 +18,13 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        imageView0.image = UIImage(named: "fruit0")
-        imageView1.image = UIImage(named: "fruit1")
-        let aromaArray: [String] = ["커피","코코넛"]
-        let place = "홍대"
-        let images: [UIImage] = [imageView0.image!, imageView1.image!]
-        DataManager.shared.addPost(aromas: aromaArray, place: place, images: images)
+
+//        imageView0.image = UIImage(named: "fruit0")
+//        imageView1.image = UIImage(named: "fruit1")
+//        let aromaArray: [String] = ["커피","코코넛"]
+//        let place = "홍대"
+//        let images: [UIImage] = [imageView0.image!, imageView1.image!]
+//        DataManager.shared.addPost(aromas: aromaArray, place: place, images: images)
     }
 
     @IBAction func fetchButtonTapped(_ sender: UIButton) {

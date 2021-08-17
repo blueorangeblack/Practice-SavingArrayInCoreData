@@ -2,7 +2,7 @@
 //  Post+CoreDataProperties.swift
 //  SavingArrayInCoreData
 //
-//  Created by Minju Lee on 2021/08/17.
+//  Created by Minju Lee on 2021/08/18.
 //
 //
 
@@ -17,8 +17,8 @@ extension Post {
     }
 
     @NSManaged public var aromas: [String]?
-    @NSManaged public var place: String?
     @NSManaged public var images: [UIImage]?
+    @NSManaged public var place: String?
 
 }
 

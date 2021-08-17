@@ -23,6 +23,7 @@ class DataManager {
         let request: NSFetchRequest<Post> = Post.fetchRequest()
         do {
             postList = try mainContext.fetch(request)
+            print("패치")
         } catch {
             print(error)
         }
@@ -34,6 +35,7 @@ class DataManager {
         object.setValue(place, forKey: "place")
         object.setValue(images, forKey: "images")
         saveContext()
+        print("저장")
     }
     
     

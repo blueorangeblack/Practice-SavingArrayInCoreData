@@ -2,7 +2,7 @@
 //  Post+CoreDataClass.swift
 //  SavingArrayInCoreData
 //
-//  Created by Minju Lee on 2021/08/17.
+//  Created by Minju Lee on 2021/08/18.
 //
 //
 

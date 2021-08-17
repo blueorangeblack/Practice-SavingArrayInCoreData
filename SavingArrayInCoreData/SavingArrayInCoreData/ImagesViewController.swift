@@ -221,7 +221,7 @@ class ImagesViewController: UIViewController {
                 case .video(let video):
                     self.selectedImageV.image = video.thumbnail
 
-                    let assetURL = video.url
+                    //let assetURL = video.url
 //                    let playerVC = AVPlayerViewController()
 //                    let player = AVPlayer(playerItem: AVPlayerItem(url:assetURL))
 //                    playerVC.player = player
