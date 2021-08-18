@@ -29,15 +29,18 @@ class DataManager {
         }
     }
     
-    func addPost(aromas: [String], place: String, images: [UIImage]) {
+    func addPost(wineTastingNotes: WineTastingNotes) {
         let object = NSEntityDescription.insertNewObject(forEntityName: "Post", into: mainContext)
-        object.setValue(aromas, forKey: "aromas")
-        object.setValue(place, forKey: "place")
-        object.setValue(images, forKey: "images")
+        object.setValue(wineTastingNotes.date, forKey: "date")
+        object.setValue(wineTastingNotes.place, forKey: "place")
+        object.setValue(wineTastingNotes.image, forKey: "image")
+        object.setValue(wineTastingNotes.price, forKey: "price")
+        object.setValue(wineTastingNotes.alcoholContent, forKey: "alcoholContent")
+        object.setValue(wineTastingNotes.aromasAndFlavors, forKey: "aromasAndFlavors")
+        object.setValue(wineTastingNotes.rating, forKey: "rating")
         saveContext()
         print("저장")
     }
-    
     
     // MARK: - Core Data stack
 

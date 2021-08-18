@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		120A0A0126CD65A7008F699E /* WineTastingNotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120A0A0026CD65A7008F699E /* WineTastingNotes.swift */; };
 		122BD5FE26CAA9DE00BB0FB1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122BD5FD26CAA9DE00BB0FB1 /* AppDelegate.swift */; };
 		122BD60026CAA9DE00BB0FB1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122BD5FF26CAA9DE00BB0FB1 /* SceneDelegate.swift */; };
 		122BD60226CAA9DE00BB0FB1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122BD60126CAA9DE00BB0FB1 /* ViewController.swift */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		120A0A0026CD65A7008F699E /* WineTastingNotes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineTastingNotes.swift; sourceTree = "<group>"; };
 		122BD5FA26CAA9DD00BB0FB1 /* SavingArrayInCoreData.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SavingArrayInCoreData.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		122BD5FD26CAA9DE00BB0FB1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		122BD5FF26CAA9DE00BB0FB1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 				12D198E826CC3D39000C7D8B /* Post+CoreDataClass.swift */,
 				12D198E926CC3D39000C7D8B /* Post+CoreDataProperties.swift */,
 				122BD61426CAAD1700BB0FB1 /* DataManager.swift */,
+				120A0A0026CD65A7008F699E /* WineTastingNotes.swift */,
 				122BD5FD26CAA9DE00BB0FB1 /* AppDelegate.swift */,
 				122BD5FF26CAA9DE00BB0FB1 /* SceneDelegate.swift */,
 				122BD60126CAA9DE00BB0FB1 /* ViewController.swift */,
@@ -235,6 +238,7 @@
 				12E188B626CB88240035964F /* AddImages2ViewController.swift in Sources */,
 				122BD5FE26CAA9DE00BB0FB1 /* AppDelegate.swift in Sources */,
 				122BD60026CAA9DE00BB0FB1 /* SceneDelegate.swift in Sources */,
+				120A0A0126CD65A7008F699E /* WineTastingNotes.swift in Sources */,
 				122BD60826CAA9DE00BB0FB1 /* SavingArrayInCoreData.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

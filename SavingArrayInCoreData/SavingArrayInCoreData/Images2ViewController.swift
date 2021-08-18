@@ -26,8 +26,12 @@ class Images2TableViewCell: UITableViewCell {
     @IBOutlet weak var firstImageView: UIImageView!
     @IBOutlet weak var secondImageView: UIImageView!
     @IBOutlet weak var thirdImageView: UIImageView!
+    @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var placeLabel: UILabel!
     @IBOutlet weak var aromaLabel: UILabel!
+    @IBOutlet weak var alcoholContentLabel: UILabel!
+    @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var ratingLabel: UILabel!
 }
 
 extension Images2ViewController: UITableViewDataSource, UITableViewDelegate {
@@ -44,28 +48,38 @@ extension Images2ViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Images2Cell") as! Images2TableViewCell
         let item = DataManager.shared.postList[indexPath.row]
-        let aromas = item.aromas?.joined(separator: ", ")
-        cell.placeLabel.text = item.place
-        cell.aromaLabel.text = aromas
         
-        let imageCount = item.images?.count
+        let formatter = DateFormatter()
+        formatter.dateStyle = .long
+        formatter.timeStyle = .short
+        formatter.locale = Locale(identifier: "KO_KR")
+        let date = formatter.string(from: item.date!)
+        cell.dateLabel.text = date
+        cell.placeLabel.text = item.place
+        let aromas = item.aromasAndFlavors?.joined(separator: ", ")
+        cell.aromaLabel.text = aromas
+        cell.alcoholContentLabel.text = String(item.alcoholContent)
+        cell.priceLabel.text = String(item.price)
+        cell.ratingLabel.text = String(item.rating)
+
+        let imageCount = item.image?.count
         if imageCount == 1 {
-            cell.firstImageView.image = item.images?[0]
+            cell.firstImageView.image = item.image?[0]
         } else if imageCount == 2 {
-            cell.firstImageView.image = item.images?[0]
-            cell.secondImageView.image = item.images?[1]
+            cell.firstImageView.image = item.image?[0]
+            cell.secondImageView.image = item.image?[1]
         } else if imageCount == 3 {
-            cell.firstImageView.image = item.images?[0]
-            cell.secondImageView.image = item.images?[1]
-            cell.thirdImageView.image = item.images?[2]
+            cell.firstImageView.image = item.image?[0]
+            cell.secondImageView.image = item.image?[1]
+            cell.thirdImageView.image = item.image?[2]
         } else {
-            
+
         }
-  
+
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 210
+        return 280
     }
 }

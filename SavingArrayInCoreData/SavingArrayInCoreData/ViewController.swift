@@ -30,14 +30,14 @@ class ViewController: UIViewController {
     @IBAction func fetchButtonTapped(_ sender: UIButton) {
         DataManager.shared.fetchPost()
         let list = DataManager.shared.postList
-        if let aromas = list.first?.aromas {
+        if let aromas = list.first?.aromasAndFlavors {
             let string = aromas.joined(separator: "\n")
             aromasLabel.text = string
         }
         
         placeLabel.text = list.first?.place
         
-        imageView2.image = list.first?.images?.first
-        imageView3.image = list.first?.images?.last
+        imageView2.image = list.first?.image?.first
+        imageView3.image = list.first?.image?.last
     }
 }

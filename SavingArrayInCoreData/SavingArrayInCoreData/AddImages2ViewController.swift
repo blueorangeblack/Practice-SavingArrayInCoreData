@@ -13,16 +13,20 @@ class AddImages2ViewController: UIViewController, YPImagePickerDelegate {
     @IBOutlet weak var secondImageView: UIImageView!
     @IBOutlet weak var thirdImageView: UIImageView!
     
+    @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var placeTextField: UITextField!
     @IBOutlet weak var aromasAndFlavorsTextField: UITextField!
+    @IBOutlet weak var alcoholContentTextField: UITextField!
+    @IBOutlet weak var priceTextField: UITextField!
+    @IBOutlet weak var ratingSegmentedControl: UISegmentedControl!
     
-    var selectedImages = [UIImage]()
-    var selectedAromasAndFlavors = [String]()
+    var selectedImages: [UIImage]?
+    var selectedAromasAndFlavors: [String]?
+    var price: Int32?
+    var alcoholContent: Float?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func addImageButtonTapped(_ sender: UIButton) {
@@ -43,7 +47,6 @@ class AddImages2ViewController: UIViewController, YPImagePickerDelegate {
 
         config.library.maxNumberOfItems = 3
         config.gallery.hidesRemoveButton = false
-        //config.library.preselectedItems = selectedItems
         
         let picker = YPImagePicker(configuration: config)
         picker.imagePickerDelegate = self
@@ -55,7 +58,6 @@ class AddImages2ViewController: UIViewController, YPImagePickerDelegate {
                 picker?.dismiss(animated: true, completion: nil)
                 return
             }
-            //_ = items.map { print("🧀 \($0)") }
 
             var selectedItems = [UIImage]()
             
@@ -82,12 +84,8 @@ class AddImages2ViewController: UIViewController, YPImagePickerDelegate {
                     }
                     picker?.dismiss(animated: true, completion: {
                         self.selectedImages = selectedItems
-                        //print("갯수 : \(selectedItems.count)")
                     })
                 case .video:
-//                    self.selectedImageV.image = video.thumbnail
-//
-//                    let assetURL = video.url
                     print("video")
                 }
             }
@@ -104,10 +102,35 @@ class AddImages2ViewController: UIViewController, YPImagePickerDelegate {
     }
     
     @IBAction func addAromasAndFlavorsButtonTapped(_ sender: UIButton) {
-        self.selectedAromasAndFlavors.append(self.aromasAndFlavorsTextField.text ?? "")
+        //self.selectedAromasAndFlavors.append(self.aromasAndFlavorsTextField.text ?? "")
+        self.selectedAromasAndFlavors = ["레몬","사과","코코넛","토스트"]
     }
+    
     @IBAction func saveButtonTapped(_ sender: UIButton) {
-        DataManager.shared.addPost(aromas: selectedAromasAndFlavors, place: placeTextField.text ?? "", images: selectedImages)
-        dismiss(animated: true, completion: nil)
+        let date = datePicker.date
+        let place = placeTextField.text
+        if let alcoholContentString = alcoholContentTextField.text {
+            if let a = Float(alcoholContentString) {
+                alcoholContent = a
+            } else {
+                print("알코올 도수 입력 오류")
+            }
+        }
+        if let priceString = priceTextField.text {
+            if let p = Int32(priceString) {
+                price = p
+            } else {
+                print("가격 입력 오류")
+            }
+        }
+        let rating = ratingSegmentedControl.selectedSegmentIndex + 1
+       
+        let wineTastingNotes = WineTastingNotes(date: date, place: place, image: selectedImages, price: price ?? 0, alcoholContent: alcoholContent ?? 0, aromasAndFlavors: selectedAromasAndFlavors, rating: Int16(rating))
+        
+        DataManager.shared.addPost(wineTastingNotes: wineTastingNotes)
+//        dismiss(animated: true, completion: nil)
+        dismiss(animated: true) {
+            self.selectedImages = nil
+        }
     }
 }

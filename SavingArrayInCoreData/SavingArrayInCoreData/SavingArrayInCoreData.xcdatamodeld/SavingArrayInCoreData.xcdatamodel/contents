@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="18154" systemVersion="20G80" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Post" representedClassName="Post" syncable="YES">
-        <attribute name="aromas" optional="YES" attributeType="Transformable" valueTransformerName="" customClassName="[String]"/>
-        <attribute name="images" optional="YES" attributeType="Transformable" valueTransformerName="" customClassName="[UIImage]"/>
+        <attribute name="alcoholContent" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="aromasAndFlavors" optional="YES" attributeType="Transformable" valueTransformerName="" customClassName="[String]"/>
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="image" optional="YES" attributeType="Transformable" valueTransformerName="" customClassName="[UIImage]"/>
         <attribute name="place" optional="YES" attributeType="String"/>
+        <attribute name="price" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="rating" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
     </entity>
     <elements>
-        <element name="Post" positionX="-54" positionY="-9" width="128" height="74"/>
+        <element name="Post" positionX="-54" positionY="-9" width="128" height="134"/>
     </elements>
 </model>
